@@ -555,3 +555,38 @@ h1, h2, h3, h4 {
   .facility__media.stack .media-frame:first-child { aspect-ratio: 3/2; }
   .hero__scroll { display: none; }
 }
+
+/* ============================================================
+   LANGUAGE SWITCHER (Google Translate, custom dropdown)
+   ============================================================ */
+.nav__lang { display: flex; align-items: center; }
+.lang-switch { position: relative; display: inline-flex; align-items: center; gap: 7px; color: rgba(255,255,255,.86); transition: color .25s; }
+.scrolled .nav .lang-switch { color: var(--body); }
+.nav .lang-switch:hover { color: #fff; }
+.scrolled .nav .lang-switch:hover { color: var(--ink); }
+.lang-switch .globe { width: 17px; height: 17px; stroke: currentColor; fill: none; stroke-width: 1.7; flex: 0 0 auto; }
+.lang-switch .chev { position: absolute; right: 2px; width: 11px; height: 11px; pointer-events: none; stroke: currentColor; fill: none; stroke-width: 2; opacity: .75; }
+.lang-switch select {
+  appearance: none; -webkit-appearance: none; -moz-appearance: none;
+  background: transparent; border: none; color: inherit; cursor: pointer; outline: none;
+  font-family: var(--f-display); font-weight: 600; font-size: .9rem; letter-spacing: .01em;
+  padding: 4px 18px 4px 0; max-width: 140px;
+}
+.lang-switch select:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; border-radius: 3px; }
+.lang-switch select option { color: #0B2545; background: #fff; font-family: system-ui, sans-serif; }
+
+@media (max-width: 760px) {
+  .nav.open .nav__lang { padding: 14px 0 4px; }
+  .nav.open .lang-switch { color: #fff; }
+  .nav.open .lang-switch select { font-size: 1.25rem; max-width: none; padding: 4px 24px 4px 0; }
+  .nav.open .lang-switch .globe { width: 22px; height: 22px; }
+  .nav.open .lang-switch .chev { width: 14px; height: 14px; }
+}
+
+/* Google Translate widget cleanup — hide its banner/gadget, keep our dropdown */
+#google_translate_element { position: absolute !important; left: -9999px !important; top: -9999px !important; height: 0 !important; width: 0 !important; overflow: hidden !important; }
+.goog-te-banner-frame, .goog-te-balloon-frame, #goog-gt-tt, .goog-tooltip { display: none !important; }
+.goog-te-gadget { height: 0; overflow: hidden; }
+body { top: 0 !important; position: static !important; }
+.skiptranslate iframe { display: none !important; visibility: hidden !important; }
+font.goog-text-highlight { background: none !important; box-shadow: none !important; }

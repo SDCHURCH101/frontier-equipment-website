@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&family=Roboto+Slab:wght@600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/styles.css?v=2">
+<link rel="stylesheet" href="assets/styles.css?v=3">
 </head>
 <body>
 
@@ -38,6 +38,52 @@
         <li><a href="#facilities">Facilities</a></li>
         <li><a href="#leasing">Leasing</a></li>
         <li><a href="#future">The Future</a></li>
+        <li class="nav__lang">
+          <div class="lang-switch notranslate" translate="no">
+            <svg class="globe" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 2.6 15.4 0 18M12 3c-2.6 2.6-2.6 15.4 0 18"/></svg>
+            <select id="langSelect" aria-label="Choose your language">
+              <option value="en">English</option>
+              <option value="es">Español</option>
+              <option value="zh-CN">中文 (简体)</option>
+              <option value="zh-TW">中文 (繁體)</option>
+              <option value="hi">हिन्दी</option>
+              <option value="ar">العربية</option>
+              <option value="pt">Português</option>
+              <option value="ru">Русский</option>
+              <option value="ja">日本語</option>
+              <option value="de">Deutsch</option>
+              <option value="fr">Français</option>
+              <option value="ko">한국어</option>
+              <option value="it">Italiano</option>
+              <option value="tr">Türkçe</option>
+              <option value="vi">Tiếng Việt</option>
+              <option value="pl">Polski</option>
+              <option value="uk">Українська</option>
+              <option value="nl">Nederlands</option>
+              <option value="fa">فارسی</option>
+              <option value="th">ไทย</option>
+              <option value="id">Bahasa Indonesia</option>
+              <option value="ms">Bahasa Melayu</option>
+              <option value="tl">Filipino</option>
+              <option value="bn">বাংলা</option>
+              <option value="pa">ਪੰਜਾਬੀ</option>
+              <option value="ur">اردو</option>
+              <option value="ta">தமிழ்</option>
+              <option value="te">తెలుగు</option>
+              <option value="el">Ελληνικά</option>
+              <option value="sv">Svenska</option>
+              <option value="da">Dansk</option>
+              <option value="no">Norsk</option>
+              <option value="fi">Suomi</option>
+              <option value="cs">Čeština</option>
+              <option value="ro">Română</option>
+              <option value="hu">Magyar</option>
+              <option value="iw">עברית</option>
+              <option value="sw">Kiswahili</option>
+            </select>
+            <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+        </li>
       </ul>
       <a href="#contact" class="btn btn--primary nav__cta">Leasing Inquiries</a>
     </nav>
@@ -563,5 +609,45 @@
 </div>
 
 <script src="assets/script.js?v=2"></script>
+
+<!-- ============================ LANGUAGE (Google Translate) ============================ -->
+<div id="google_translate_element" aria-hidden="true"></div>
+<script>
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      includedLanguages: 'en,es,zh-CN,zh-TW,hi,ar,pt,ru,ja,de,fr,ko,it,tr,vi,pl,uk,nl,fa,th,id,ms,tl,bn,pa,ur,ta,te,el,sv,da,no,fi,cs,ro,hu,iw,sw',
+      autoDisplay: false
+    }, 'google_translate_element');
+  }
+  (function () {
+    function currentLang() {
+      var m = document.cookie.match(/googtrans=\/[^\/]*\/([^;]+)/);
+      return m ? decodeURIComponent(m[1]) : 'en';
+    }
+    function rootDomain() {
+      var p = location.hostname.split('.');
+      return p.length >= 2 ? '.' + p.slice(-2).join('.') : location.hostname;
+    }
+    function setLang(lang) {
+      var paths = ['; path=/', '; path=/; domain=' + location.hostname, '; path=/; domain=' + rootDomain()];
+      if (lang === 'en') {
+        paths.forEach(function (p) { document.cookie = 'googtrans=' + p + '; expires=Thu, 01 Jan 1970 00:00:00 GMT'; });
+      } else {
+        var v = '/en/' + lang;
+        paths.forEach(function (p) { document.cookie = 'googtrans=' + v + p; });
+      }
+      location.reload();
+    }
+    document.addEventListener('DOMContentLoaded', function () {
+      var sel = document.getElementById('langSelect');
+      if (!sel) return;
+      var cur = currentLang();
+      if ([].some.call(sel.options, function (o) { return o.value === cur; })) sel.value = cur;
+      sel.addEventListener('change', function () { setLang(this.value); });
+    });
+  })();
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
