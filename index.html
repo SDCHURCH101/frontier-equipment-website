@@ -41,7 +41,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&family=Roboto+Slab:wght@600;700;800&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="assets/photos/hero.webp" fetchpriority="high">
-<link rel="stylesheet" href="assets/styles.css?v=10">
+<link rel="stylesheet" href="assets/styles.css?v=11">
 
 <!-- ============================ STRUCTURED DATA (JSON-LD) ============================ -->
 <script type="application/ld+json">
@@ -90,7 +90,8 @@
       "makesOffer": [
         { "@type": "Offer", "name": "Shop leasing", "description": "36,000 sq ft primary shop plus auxiliary shops, open and enclosed service bays, for Arctic fleet maintenance, fabrication, storage, and staging." },
         { "@type": "Offer", "name": "Pad leasing", "description": "Permitted gravel pad inside operator security for staging, laydown, and project mobilization. Indicative rate around $7,000 per acre per month." },
-        { "@type": "Offer", "name": "Man camp leasing", "description": "208-bed on-site workforce housing on the same pad as the shops, suited to large crews and longer campaigns." }
+        { "@type": "Offer", "name": "Man camp leasing", "description": "208-bed on-site workforce housing on the same pad as the shops, suited to large crews and longer campaigns." },
+        { "@type": "Offer", "name": "Tower leasing", "description": "A standing steel lattice tower on the pad, inside operator security, available to lease for communications, antennas, repeaters, and monitoring instruments." }
       ]
     },
     {
@@ -113,7 +114,7 @@
       "@id": "https://akfec.com/#faq",
       "mainEntity": [
         { "@type": "Question", "name": "Where is Frontier Pad located?", "acceptedAnswer": { "@type": "Answer", "text": "Frontier Pad is 12.5 miles west of Deadhorse, Alaska, on the Spine Road, inside Hilcorp security, on the North Slope near Prudhoe Bay." } },
-        { "@type": "Question", "name": "What does Frontier Equipment Company lease?", "acceptedAnswer": { "@type": "Answer", "text": "Frontier Equipment Company leases shop space, gravel pad and yard space, and man-camp (workforce housing) beds at Prudhoe Bay. Tenants can take a single shop, a block of pad, beds in the camp, or the integrated footprint together." } },
+        { "@type": "Question", "name": "What does Frontier Equipment Company lease?", "acceptedAnswer": { "@type": "Answer", "text": "Frontier Equipment Company leases shop space, gravel pad and yard space, man-camp (workforce housing) beds, and a standing steel tower at Prudhoe Bay. Tenants can take a single shop, a block of pad, beds in the camp, the tower, or the integrated footprint together." } },
         { "@type": "Question", "name": "How large is the shop space?", "acceptedAnswer": { "@type": "Answer", "text": "The site has a 36,000 square foot primary shop plus multiple auxiliary shops, in open and enclosed service-bay configurations." } },
         { "@type": "Question", "name": "How many beds are in the camp?", "acceptedAnswer": { "@type": "Answer", "text": "The on-site man camp has 208 beds, suited to large crews and longer campaigns." } },
         { "@type": "Question", "name": "Is the property accessible year-round and secure?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Frontier Pad is inside Hilcorp's security perimeter, road-connected on the Spine Road, gated, and operable in every season including winter campaigns." } },
@@ -451,16 +452,16 @@
   <div class="wrap wrap--wide">
     <div class="sec-head reveal">
       <p class="eyebrow">Facilities</p>
-      <h2 class="h-sec">Shop, pad, and camp on one footprint.</h2>
+      <h2 class="h-sec">Shop, pad, camp, and tower on one footprint.</h2>
       <p class="lede">The site mixes shops of different sizes, access conditions, and bay arrangements, supporting maintenance programs, equipment storage, project staging, and multi-crew field support.</p>
     </div>
 
     <!-- Shops -->
     <div class="facility">
       <div class="facility__media stack reveal">
-        <div class="media-frame"><img loading="lazy" decoding="async" src="assets/photos/prop-shops-day.webp" alt="Frontier main shop with the red roof and white service-bay doors"></div>
-        <div class="media-frame media-frame--wide"><img loading="lazy" decoding="async" src="assets/photos/shop-bay.webp" alt="Inside a Frontier shop bay with an overhead bridge crane"></div>
-        <div class="media-frame media-frame--wide"><img loading="lazy" decoding="async" src="assets/photos/prop-sign.webp" alt="Frontier logo sign on the shop building"></div>
+        <div class="media-frame"><img loading="lazy" decoding="async" src="assets/photos/shop-front.webp" alt="Frontier main shop with red roof, white service-bay doors, and the Frontier sign under a clear blue sky"></div>
+        <div class="media-frame media-frame--wide"><img loading="lazy" decoding="async" src="assets/photos/shop-crane.webp" alt="Inside a Frontier shop bay with a yellow overhead bridge crane"></div>
+        <div class="media-frame media-frame--wide"><img loading="lazy" decoding="async" src="assets/photos/shop-sign.webp" alt="The Frontier sign on the shop with a company truck parked out front"></div>
       </div>
       <div class="facility__body reveal d1">
         <div class="facility__kicker"><span class="n">01</span> Shop Facilities</div>
@@ -477,7 +478,7 @@
     <!-- Pad -->
     <div class="facility facility--rev">
       <div class="facility__media reveal">
-        <div class="media-frame media-frame--wide"><img loading="lazy" decoding="async" src="assets/photos/pad-yard.webp" alt="Open gravel pad and yard at Frontier with a crane truck under blue sky"></div>
+        <div class="media-frame media-frame--wide"><img loading="lazy" decoding="async" src="assets/photos/pad-wide.webp" alt="Open gravel pad and yard at Frontier with a boom truck under a big North Slope sky"></div>
       </div>
       <div class="facility__body reveal d1">
         <div class="facility__kicker"><span class="n">02</span> Pad &amp; Yard</div>
@@ -494,8 +495,8 @@
     <!-- Camp -->
     <div class="facility">
       <div class="facility__media stack reveal">
-        <div class="media-frame"><img loading="lazy" decoding="async" src="assets/photos/camp-orange2.webp" alt="208-man camp building at Frontier"></div>
-        <div class="media-frame media-frame--wide"><img loading="lazy" decoding="async" src="assets/photos/camp-room.webp" alt="Bunk room inside the Frontier camp"></div>
+        <div class="media-frame"><img loading="lazy" decoding="async" src="assets/photos/camp-exterior.webp" alt="Two-story modular man-camp building at Frontier under a clear blue sky"></div>
+        <div class="media-frame media-frame--wide"><img loading="lazy" decoding="async" src="assets/photos/camp-bed.webp" alt="A furnished bedroom inside the Frontier camp with a bed, window, desk, and wardrobe"></div>
         <div class="media-frame media-frame--wide"><img loading="lazy" decoding="async" src="assets/photos/winter-camp.webp" alt="Camp buildings in Arctic winter"></div>
       </div>
       <div class="facility__body reveal d1">
@@ -509,6 +510,23 @@
         </div>
       </div>
     </div>
+
+    <!-- Tower -->
+    <div class="facility facility--rev">
+      <div class="facility__media facility__media--tower reveal">
+        <div class="media-frame media-frame--tall"><img loading="lazy" decoding="async" src="assets/photos/tower.webp" alt="Standing steel lattice tower at Frontier against a deep blue North Slope sky"></div>
+      </div>
+      <div class="facility__body reveal d1">
+        <div class="facility__kicker"><span class="n">04</span> Standing Tower</div>
+        <h3>A standing steel tower, ready to lease.</h3>
+        <p>A tall steel lattice tower stands on the pad, already inside the operator perimeter with power and road access close by. Lease it for communications, antennas, repeaters, or met and monitoring instruments. On the North Slope, a permitted structure that is already up and inside security is far quicker to put to work than building new.</p>
+        <div class="spec-row">
+          <div class="spec"><b>Steel</b><span>lattice tower</span></div>
+          <div class="spec"><b>On the pad</b><span>inside security</span></div>
+          <div class="spec"><b>Comms</b><span>&amp; antenna ready</span></div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -518,8 +536,8 @@
     <div class="sec-head sec-head--center reveal">
       <img class="brand-emblem brand-emblem--center" src="assets/img/frontier-logo-yellow.png" alt="Frontier Equipment Company" style="height:148px">
       <p class="eyebrow eyebrow--ondark">Now Leasing · Prudhoe Bay</p>
-      <h2 class="h-sec">Lease shop, pad, and man camp space.</h2>
-      <p class="lede" style="margin-inline:auto">Frontier Equipment Company offers flexible leasing across the property. Take a single shop, a block of pad, beds in the camp, or the integrated footprint together.</p>
+      <h2 class="h-sec">Lease shop, pad, camp, and tower space.</h2>
+      <p class="lede" style="margin-inline:auto">Frontier Equipment Company offers flexible leasing across the property. Take a single shop, a block of pad, beds in the camp, the standing tower, or the integrated footprint together.</p>
     </div>
     <div class="lease-grid">
       <div class="lease-card reveal d1">
@@ -553,6 +571,17 @@
           <li>Bundled with shop &amp; yard</li>
           <li>Suited to large crews</li>
           <li>Longer-campaign ready</li>
+        </ul>
+      </div>
+      <div class="lease-card reveal d3">
+        <div class="lease-card__num">04 · TOWER</div>
+        <h3>Tower leasing</h3>
+        <p>A standing steel tower on the pad for communications, antennas, and monitoring.</p>
+        <ul>
+          <li>Steel lattice tower</li>
+          <li>Inside Hilcorp security</li>
+          <li>Comms &amp; antenna ready</li>
+          <li>Power &amp; access nearby</li>
         </ul>
       </div>
     </div>
@@ -620,12 +649,14 @@
       <h2 class="h-sec">Frontier Pad, in pictures.</h2>
     </div>
     <div class="gallery" id="gallery">
-      <div class="gitem gitem--wide reveal"><img loading="lazy" decoding="async" src="assets/photos/prop-complex.webp" alt="Frontier shop complex with the logo sign"><span>The Frontier shop complex on the pad</span></div>
-      <div class="gitem reveal d1"><img loading="lazy" decoding="async" src="assets/photos/prop-sign.webp" alt="Frontier logo on the shop building"><span>The Frontier mark on the shop</span></div>
-      <div class="gitem reveal d2"><img loading="lazy" decoding="async" src="assets/photos/shop-crane.webp" alt="Inside a Frontier shop bay with an overhead crane"><span>Inside the shop bay</span></div>
-      <div class="gitem reveal"><img loading="lazy" decoding="async" src="assets/photos/truck-lot.webp" alt="Branded Frontier F-350 truck"><span>Frontier on the road</span></div>
-      <div class="gitem reveal d1"><img loading="lazy" decoding="async" src="assets/photos/gmc-truck.webp" alt="Frontier-branded GMC truck with the logo on the door"><span>The Frontier fleet</span></div>
-      <div class="gitem reveal d2"><img loading="lazy" decoding="async" src="assets/photos/camp-orange2.webp" alt="208-man camp building"><span>208-man camp</span></div>
+      <div class="gitem gitem--wide reveal"><img loading="lazy" decoding="async" src="assets/photos/aerial.webp" alt="Aerial view of Frontier Pad on the North Slope tundra with lakes to the horizon"><span>Frontier Pad on the tundra, from the air</span></div>
+      <div class="gitem reveal d1"><img loading="lazy" decoding="async" src="assets/photos/shop-front.webp" alt="The Frontier main shop and sign under a blue sky"><span>The main shop and Frontier sign</span></div>
+      <div class="gitem reveal d2"><img loading="lazy" decoding="async" src="assets/photos/tower-detail.webp" alt="The standing steel tower at Frontier against a blue sky"><span>The standing tower</span></div>
+      <div class="gitem reveal"><img loading="lazy" decoding="async" src="assets/photos/shop-crane.webp" alt="Inside a Frontier shop bay with a yellow overhead crane"><span>Inside the shop, overhead crane</span></div>
+      <div class="gitem reveal d1"><img loading="lazy" decoding="async" src="assets/photos/camp-bed.webp" alt="A furnished room inside the Frontier camp"><span>A room in the camp</span></div>
+      <div class="gitem reveal d2"><img loading="lazy" decoding="async" src="assets/photos/shop-interior2.webp" alt="Open shop floor available to lease"><span>Open shop space to lease</span></div>
+      <div class="gitem reveal"><img loading="lazy" decoding="async" src="assets/photos/camp-exterior.webp" alt="The 208-man camp building"><span>The 208-man camp</span></div>
+      <div class="gitem reveal d1"><img loading="lazy" decoding="async" src="assets/photos/truck-lot.webp" alt="Branded Frontier F-350 truck"><span>Frontier on the road</span></div>
       <div class="gitem reveal d2"><img loading="lazy" decoding="async" src="assets/photos/shop-golden.webp" alt="Frontier shop row at golden hour"><span>Main shop row at golden hour</span></div>
       <div class="gitem gitem--wide reveal d1"><img loading="lazy" decoding="async" src="assets/photos/pad-golden.webp" alt="The Frontier gravel pad and buildings at golden hour"><span>The pad at golden hour</span></div>
     </div>
@@ -646,7 +677,7 @@
       </details>
       <details class="faq-item">
         <summary>What does Frontier Equipment Company lease?</summary>
-        <p>We lease shop space, gravel pad and yard space, and man camp (workforce housing) beds at Prudhoe Bay. Tenants can take a single shop, a block of pad, beds in the camp, or the integrated footprint together.</p>
+        <p>We lease shop space, gravel pad and yard space, man camp (workforce housing) beds, and a standing steel tower at Prudhoe Bay. Tenants can take a single shop, a block of pad, beds in the camp, the tower, or the integrated footprint together.</p>
       </details>
       <details class="faq-item">
         <summary>How large is the shop space?</summary>
