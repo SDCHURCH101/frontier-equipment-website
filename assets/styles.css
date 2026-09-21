@@ -144,7 +144,7 @@ h1, h2, h3, h4 {
 .logo { display: inline-flex; align-items: center; gap: 13px; margin-right: auto; }
 .logo__emblem {
   height: 58px; width: auto; flex: 0 0 auto;
-  background: #fff; padding: 5px 8px; border-radius: 9px;
+  background: #fff; padding: 3px 5px; border-radius: 9px;
   box-shadow: 0 5px 16px rgba(7,26,49,.24);
   transition: height .3s var(--ease), box-shadow .3s var(--ease);
 }
@@ -160,7 +160,7 @@ h1, h2, h3, h4 {
 /* prominent standalone emblem — rendered as a white sign plate (matches the real signage) */
 .brand-emblem {
   width: auto; display: block;
-  background: #fff; border-radius: 16px; padding: 11px 15px;
+  background: #fff; border-radius: 16px; padding: 7px 10px;
   box-shadow: 0 16px 38px rgba(0,0,0,.3);
 }
 .brand-emblem--center { margin: 0 auto clamp(22px,3vw,32px); }
