@@ -144,7 +144,7 @@ h1, h2, h3, h4 {
 .logo { display: inline-flex; align-items: center; gap: 13px; margin-right: auto; }
 .logo__emblem {
   height: 58px; width: auto; flex: 0 0 auto;
-  background: #fff; padding: 6px 10px; border-radius: 9px;
+  background: #fff; padding: 5px 8px; border-radius: 9px;
   box-shadow: 0 5px 16px rgba(7,26,49,.24);
   transition: height .3s var(--ease), box-shadow .3s var(--ease);
 }
@@ -160,7 +160,7 @@ h1, h2, h3, h4 {
 /* prominent standalone emblem — rendered as a white sign plate (matches the real signage) */
 .brand-emblem {
   width: auto; display: block;
-  background: #fff; border-radius: 16px; padding: 16px 22px;
+  background: #fff; border-radius: 16px; padding: 11px 15px;
   box-shadow: 0 16px 38px rgba(0,0,0,.3);
 }
 .brand-emblem--center { margin: 0 auto clamp(22px,3vw,32px); }
@@ -456,6 +456,16 @@ h1, h2, h3, h4 {
 .ccard__ico svg { width: 22px; height: 22px; stroke: #fff; fill: none; stroke-width: 1.9; }
 .ccard small { display: block; font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: rgba(217,226,236,.55); font-family: var(--f-display); font-weight: 600; }
 .ccard b { font-size: 1.16rem; color: #fff; font-weight: 600; font-family: var(--f-display); }
+.contact__portrait { margin: 30px 0 4px; max-width: 460px; }
+.contact__portrait img { width: 100%; height: auto; display: block; border-radius: 14px 14px 0 0; }
+.contact__portrait figcaption {
+  display: flex; flex-direction: column; gap: 3px;
+  padding: 14px 20px; background: rgba(255,255,255,.04);
+  border: 1px solid var(--line-dark); border-top: 3px solid var(--orange);
+  border-radius: 0 0 14px 14px;
+}
+.contact__portrait figcaption b { font-family: var(--f-display); font-size: 1.12rem; color: #fff; font-weight: 600; }
+.contact__portrait figcaption span { font-size: .82rem; color: rgba(217,226,236,.62); }
 
 .lease-form {
   background: #fff; border-radius: 16px; padding: clamp(28px,3.4vw,42px);
