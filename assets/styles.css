@@ -138,10 +138,10 @@ h1, h2, h3, h4 {
   box-shadow: var(--shadow-sm);
   border-bottom: 1px solid var(--line);
 }
-.header-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.header-inner { display: flex; align-items: center; gap: 20px; }
 
 /* Logo lockup */
-.logo { display: inline-flex; align-items: center; gap: 13px; }
+.logo { display: inline-flex; align-items: center; gap: 13px; margin-right: auto; }
 .logo__emblem {
   height: 58px; width: auto; flex: 0 0 auto;
   background: #fff; padding: 6px 10px; border-radius: 9px;
@@ -559,12 +559,11 @@ h1, h2, h3, h4 {
 /* ============================================================
    LANGUAGE SWITCHER (Google Translate, custom dropdown)
    ============================================================ */
-.nav__lang { display: flex; align-items: center; }
-.lang-switch { position: relative; display: inline-flex; align-items: center; gap: 7px; color: rgba(255,255,255,.86); transition: color .25s; }
-.scrolled .nav .lang-switch { color: var(--body); }
-.nav .lang-switch:hover { color: #fff; }
-.scrolled .nav .lang-switch:hover { color: var(--ink); }
-.lang-switch .globe { width: 17px; height: 17px; stroke: currentColor; fill: none; stroke-width: 1.7; flex: 0 0 auto; }
+.lang-switch { position: relative; display: inline-flex; align-items: center; gap: 7px; flex: 0 0 auto; color: rgba(255,255,255,.9); transition: color .25s; }
+.scrolled .lang-switch { color: var(--body); }
+.lang-switch:hover { color: #fff; }
+.scrolled .lang-switch:hover { color: var(--ink); }
+.lang-switch .globe { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 1.7; flex: 0 0 auto; }
 .lang-switch .chev { position: absolute; right: 2px; width: 11px; height: 11px; pointer-events: none; stroke: currentColor; fill: none; stroke-width: 2; opacity: .75; }
 .lang-switch select {
   appearance: none; -webkit-appearance: none; -moz-appearance: none;
@@ -575,12 +574,12 @@ h1, h2, h3, h4 {
 .lang-switch select:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; border-radius: 3px; }
 .lang-switch select option { color: #0B2545; background: #fff; font-family: system-ui, sans-serif; }
 
+/* On phones: keep it always visible next to the menu button — globe icon that opens the native picker */
 @media (max-width: 760px) {
-  .nav.open .nav__lang { padding: 14px 0 4px; }
-  .nav.open .lang-switch { color: #fff; }
-  .nav.open .lang-switch select { font-size: 1.25rem; max-width: none; padding: 4px 24px 4px 0; }
-  .nav.open .lang-switch .globe { width: 22px; height: 22px; }
-  .nav.open .lang-switch .chev { width: 14px; height: 14px; }
+  .lang-switch { padding: 6px; margin-left: 4px; }
+  .lang-switch .globe { width: 23px; height: 23px; }
+  .lang-switch .chev { display: none; }
+  .lang-switch select { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; padding: 0; opacity: 0; cursor: pointer; }
 }
 
 /* Google Translate widget cleanup — hide its banner/gadget, keep our dropdown */

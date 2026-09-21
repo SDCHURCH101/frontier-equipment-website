@@ -41,7 +41,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&family=Roboto+Slab:wght@600;700;800&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="assets/photos/hero.webp" fetchpriority="high">
-<link rel="stylesheet" href="assets/styles.css?v=5">
+<link rel="stylesheet" href="assets/styles.css?v=6">
 
 <!-- ============================ STRUCTURED DATA (JSON-LD) ============================ -->
 <script type="application/ld+json">
@@ -144,8 +144,11 @@
         <li><a href="#facilities">Facilities</a></li>
         <li><a href="#leasing">Leasing</a></li>
         <li><a href="#future">The Future</a></li>
-        <li class="nav__lang">
-          <div class="lang-switch notranslate" translate="no">
+      </ul>
+      <a href="#contact" class="btn btn--primary nav__cta">Leasing Inquiries</a>
+    </nav>
+
+    <div class="lang-switch notranslate" translate="no">
             <svg class="globe" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 2.6 15.4 0 18M12 3c-2.6 2.6-2.6 15.4 0 18"/></svg>
             <select id="langSelect" aria-label="Choose your language">
               <option value="en">English</option>
@@ -189,10 +192,6 @@
             </select>
             <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
           </div>
-        </li>
-      </ul>
-      <a href="#contact" class="btn btn--primary nav__cta">Leasing Inquiries</a>
-    </nav>
 
     <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -788,22 +787,32 @@
       var p = location.hostname.split('.');
       return p.length >= 2 ? '.' + p.slice(-2).join('.') : location.hostname;
     }
-    function setLang(lang) {
-      var paths = ['; path=/', '; path=/; domain=' + location.hostname, '; path=/; domain=' + rootDomain()];
-      if (lang === 'en') {
-        paths.forEach(function (p) { document.cookie = 'googtrans=' + p + '; expires=Thu, 01 Jan 1970 00:00:00 GMT'; });
-      } else {
-        var v = '/en/' + lang;
-        paths.forEach(function (p) { document.cookie = 'googtrans=' + v + p; });
-      }
-      location.reload();
+    function forEachScope(fn) {
+      ['; path=/', '; path=/; domain=' + location.hostname, '; path=/; domain=' + rootDomain()].forEach(fn);
+    }
+    function setCookie(lang) { forEachScope(function (p) { document.cookie = 'googtrans=/en/' + lang + p; }); }
+    function clearCookie() { forEachScope(function (p) { document.cookie = 'googtrans=' + p + '; expires=Thu, 01 Jan 1970 00:00:00 GMT'; }); }
+    // Drive the hidden Google combo directly — this is what actually applies the translation.
+    function triggerCombo(lang) {
+      var tries = 0;
+      (function go() {
+        var combo = document.querySelector('.goog-te-combo');
+        if (combo) { combo.value = lang; combo.dispatchEvent(new Event('change')); }
+        else if (tries++ < 80) { setTimeout(go, 100); }
+      })();
+    }
+    function applyLang(lang) {
+      if (lang === 'en') { clearCookie(); location.reload(); return; } // clean reset to the original English
+      setCookie(lang);      // persist the choice across refreshes / navigation
+      triggerCombo(lang);   // translate immediately, no page reload
     }
     document.addEventListener('DOMContentLoaded', function () {
       var sel = document.getElementById('langSelect');
       if (!sel) return;
       var cur = currentLang();
       if ([].some.call(sel.options, function (o) { return o.value === cur; })) sel.value = cur;
-      sel.addEventListener('change', function () { setLang(this.value); });
+      sel.addEventListener('change', function () { applyLang(this.value); });
+      if (cur && cur !== 'en') { triggerCombo(cur); } // restore translation after a refresh
     });
   })();
 </script>
